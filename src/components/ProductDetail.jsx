@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
-import productsData from '../data/products.json';
+import productsData from '/products.json?url';
 import { waOrderLink, buildProductMessage } from '../utils/whatsapp';
 
 const ProductDetail = ({ addToCart, toggleWishlist, wishlist }) => {
