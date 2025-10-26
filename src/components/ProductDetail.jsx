@@ -1,17 +1,35 @@
 import { useParams } from 'react-router-dom';
-import { useState } from 'react';
-import productsData from '/products.json?url';
+import { useState, useEffect } from 'react';
+import { fetchProducts } from '../utils/supabase';
 import { waOrderLink, buildProductMessage } from '../utils/whatsapp';
 
 const ProductDetail = ({ addToCart, toggleWishlist, wishlist }) => {
   const { id } = useParams();
-  const product = productsData.products.find(p => p.id === id);
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadProduct = async () => {
+      try {
+        const products = await fetchProducts();
+        const foundProduct = products.find(p => p.id === id);
+        setProduct(foundProduct);
+      } catch (error) {
+        console.error('Failed to load product:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadProduct();
+  }, [id]);
+
+  if (loading) return <div className="text-center py-16">Loading...</div>;
+  if (!product) return <div className="text-center py-16">Product not found</div>;
+
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
   const [selectedSize, setSelectedSize] = useState(product.sizesEU[0]);
   const [qty, setQty] = useState(1);
   const [tab, setTab] = useState('about');
-
-  if (!product) return <div>Product not found</div>;
 
   const share = () => {
     window.open(waOrderLink(buildProductMessage(product)), '_blank');
