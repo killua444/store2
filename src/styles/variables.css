@@ -1,0 +1,22 @@
+:root {
+  --brand: #10b981;
+  --brand-dark: #064e3b;
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --surface-2: #eef2f7;
+  --line: #e5e7eb;
+  --text: #0b0c0f;
+  --muted: #6b7280;
+  --radius: 16px;
+  --shadow: 0 8px 30px rgba(0,0,0,.08);
+}
+
+[data-theme='emerald'] {
+  --brand: #059669;
+  --brand-dark: #064e3b;
+  --bg: #0a0f0e;
+  --surface: #0f1614;
+  --surface-2: #1b2a26;
+  --text: #f4f4f4;
+  --muted: #9ca3af;
+}

@@ -1,0 +1,43 @@
+{
+  "products": [
+    {
+      "id": "shadow-hoodie",
+      "title": "Shadow Essentials Hoodie",
+      "brand": "Shadow Wear",
+      "category": "Hoodie",
+      "price": 299,
+      "currency": "MAD",
+      "image": "https://shadowwear.netlify.app/images/shadow-hoodie.jpg",
+      "rating": 4.8,
+      "reviews": 120,
+      "colors": ["Emerald", "Black", "Ash"],
+      "sizesEU": ["S","M","L","XL"]
+    },
+    {
+      "id": "shadow-tshirt",
+      "title": "Shadow Classic T-Shirt",
+      "brand": "Shadow Wear",
+      "category": "T-Shirt",
+      "price": 149,
+      "currency": "MAD",
+      "image": "https://shadowwear.netlify.app/images/shadow-tshirt.jpg",
+      "rating": 4.5,
+      "reviews": 85,
+      "colors": ["White", "Black", "Gray"],
+      "sizesEU": ["S","M","L","XL"]
+    },
+    {
+      "id": "shadow-pants",
+      "title": "Shadow Jogger Pants",
+      "brand": "Shadow Wear",
+      "category": "Pants",
+      "price": 199,
+      "currency": "MAD",
+      "image": "https://shadowwear.netlify.app/images/shadow-pants.jpg",
+      "rating": 4.7,
+      "reviews": 95,
+      "colors": ["Black", "Gray", "Navy"],
+      "sizesEU": ["S","M","L","XL"]
+    }
+  ]
+}
