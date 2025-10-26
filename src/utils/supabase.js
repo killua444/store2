@@ -9,7 +9,7 @@ export const fetchProducts = async () => {
   if (!supabase) {
     // Fallback to local JSON
     try {
-      const response = await fetch('/src/data/products.json')
+      const response = await fetch('./data/products.json')
       const data = await response.json()
       return data.products
     } catch (fallbackError) {
@@ -25,7 +25,7 @@ export const fetchProducts = async () => {
     console.error('Error fetching products:', error)
     // Fallback to local JSON
     try {
-      const response = await fetch('/src/data/products.json')
+      const response = await fetch('./data/products.json')
       const data = await response.json()
       return data.products
     } catch (fallbackError) {
@@ -38,14 +38,14 @@ export const fetchProducts = async () => {
 export const fetchSettings = async () => {
   if (!supabase) {
     // Fallback to local JSON
-    const response = await fetch('/src/data/settings.json')
+    const response = await fetch('./data/settings.json')
     return response.json()
   }
   const { data, error } = await supabase.from('settings').select('*')
   if (error) {
     console.error('Error fetching settings:', error)
     // Fallback to local JSON
-    const response = await fetch('/src/data/settings.json')
+    const response = await fetch('./data/settings.json')
     return response.json()
   }
   return data.reduce((acc, item) => ({ ...acc, [item.key]: item.value }), {})
